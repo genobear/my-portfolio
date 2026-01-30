@@ -7,14 +7,15 @@
   animation: fadeInUp 0.6s ease-out both;
 
   &:hover {
-    transform: translateY(-8px);
-    border-color: var(--border-medium);
+    transform: translateY(-12px);
+    border-color: var(--accent-primary);
     box-shadow:
       var(--shadow-lg),
+      0 0 0 1px var(--accent-primary),
       0 0 40px var(--accent-glow);
 
     .card__image-img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .card__image-placeholder {
@@ -22,7 +23,11 @@
     }
 
     .card__image-icon {
-      transform: scale(1.1);
+      transform: scale(1.15);
+      color: var(--accent-primary);
+    }
+
+    .card__title {
       color: var(--accent-primary);
     }
   }
@@ -31,6 +36,7 @@
     position: relative;
     aspect-ratio: 16 / 10;
     overflow: hidden;
+    background: var(--bg-secondary);
   }
 
   &__image-img {
@@ -38,7 +44,7 @@
     height: 100%;
     object-fit: cover;
     object-position: top center;
-    transition: transform var(--transition-medium);
+    transition: transform var(--transition-slow);
   }
 
   &__image-placeholder {
@@ -53,28 +59,34 @@
 
   &__image-icon {
     font-family: var(--font-display);
-    font-size: 3rem;
-    font-weight: 300;
+    font-size: 4rem;
     color: var(--text-muted);
     transition: all var(--transition-medium);
+    letter-spacing: 0.02em;
   }
 
   &__badge {
     position: absolute;
     top: var(--space-sm);
     right: var(--space-sm);
-    padding: 4px 12px;
+    padding: 6px 16px;
     background: var(--accent-primary);
     color: var(--bg-primary);
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.12em;
     border-radius: var(--radius-sm);
+    box-shadow: 0 4px 12px var(--accent-glow);
   }
 
   &__content {
     padding: var(--space-md);
+
+    @media (min-width: 640px) {
+      padding: var(--space-lg);
+    }
   }
 
   &__header {
@@ -86,26 +98,34 @@
   }
 
   &__title {
-    font-family: var(--font-display);
-    font-size: 1.375rem;
-    font-weight: 400;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
     color: var(--text-primary);
-    line-height: 1.3;
+    line-height: 1.2;
+    transition: color var(--transition-fast);
+
+    @media (min-width: 640px) {
+      font-size: 1.75rem;
+    }
   }
 
   &__year {
     font-family: var(--font-body);
     font-size: 0.75rem;
+    font-weight: 600;
     color: var(--text-muted);
-    padding: 2px 8px;
+    padding: 4px 10px;
     background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     flex-shrink: 0;
+    letter-spacing: 0.04em;
   }
 
   &__description {
     font-size: 0.9375rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: var(--space-md);
     display: -webkit-box;
@@ -117,50 +137,56 @@
   &__tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
     margin-bottom: var(--space-md);
   }
 
   &__tech-tag {
     font-size: 0.75rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--text-tertiary);
-    padding: 4px 10px;
+    padding: 6px 12px;
     background: var(--bg-secondary);
     border-radius: var(--radius-sm);
     border: 1px solid var(--border-subtle);
     transition: all var(--transition-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 
     &:hover {
       color: var(--accent-primary);
       border-color: var(--accent-muted);
+      background: var(--accent-muted);
     }
   }
 
   &__tech-more {
     font-size: 0.75rem;
+    font-weight: 600;
     color: var(--text-muted);
-    padding: 4px 8px;
+    padding: 6px 8px;
   }
 
   &__links {
     display: flex;
     gap: var(--space-sm);
-    padding-top: var(--space-sm);
+    padding-top: var(--space-md);
     border-top: 1px solid var(--border-subtle);
   }
 
   &__link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-size: 0.8125rem;
-    font-weight: 400;
+    font-weight: 600;
     color: var(--text-tertiary);
     text-decoration: none;
-    padding: 6px 12px;
+    padding: 8px 14px;
     border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 
     svg {
       width: 16px;
@@ -175,15 +201,23 @@
     &--live {
       &:hover {
         color: var(--accent-primary);
+        background: var(--accent-muted);
       }
     }
+  }
+}
+
+// Animation for grid items with stagger
+@for $i from 1 through 12 {
+  .card:nth-child(#{$i}) {
+    animation-delay: #{$i * 0.08}s;
   }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;

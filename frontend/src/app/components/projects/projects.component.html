@@ -1,9 +1,12 @@
 <section class="projects" id="projects">
+  <span class="projects__section-number">02</span>
+  <div class="projects__divider"></div>
+
   <div class="projects__container">
     <header class="projects__header">
       <div class="projects__title-group">
         <span class="projects__label">Portfolio</span>
-        <h2 class="projects__title">Selected Work</h2>
+        <h2 class="projects__title">Selected <span class="highlight">Work</span></h2>
         <p class="projects__subtitle">
           A collection of projects showcasing my expertise across different technologies and domains.
         </p>
@@ -24,7 +27,11 @@
 
     <div class="projects__grid">
       @for (project of projects(); track project.id; let i = $index) {
-        <app-project-card [project]="project" [index]="i" />
+        <app-project-card
+          [project]="project"
+          [index]="i"
+          [class.featured]="project.featured"
+        />
       } @empty {
         <div class="projects__empty">
           <p>No projects found for this filter.</p>

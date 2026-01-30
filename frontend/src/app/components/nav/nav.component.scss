@@ -9,14 +9,20 @@
   background: transparent;
 
   &.scrolled {
-    background: rgba(15, 15, 18, 0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(12, 12, 12, 0.95);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-subtle);
     padding: var(--space-sm) 0;
   }
 
+  // When mobile menu is open, use solid background
+  &:has(.nav__links.open) {
+    background: var(--bg-primary);
+    border-bottom: none;
+  }
+
   &__container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--space-md);
     display: flex;
@@ -26,15 +32,19 @@
     @media (min-width: 768px) {
       padding: 0 var(--space-lg);
     }
+
+    @media (min-width: 1200px) {
+      padding: 0 var(--space-xl);
+    }
   }
 
   &__logo {
     font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.75rem;
     color: var(--text-primary);
     text-decoration: none;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     transition: color var(--transition-fast);
 
     &:hover {
@@ -45,7 +55,7 @@
   &__links {
     display: none;
     list-style: none;
-    gap: var(--space-lg);
+    gap: var(--space-xl);
 
     @media (min-width: 768px) {
       display: flex;
@@ -54,11 +64,11 @@
 
   &__link {
     font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 400;
+    font-size: 0.8125rem;
+    font-weight: 500;
     color: var(--text-secondary);
     text-decoration: none;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     position: relative;
     padding: var(--space-xs) 0;
@@ -70,7 +80,7 @@
       bottom: 0;
       left: 0;
       width: 0;
-      height: 1px;
+      height: 2px;
       background: var(--accent-primary);
       transition: width var(--transition-medium);
     }
@@ -89,13 +99,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    width: 32px;
-    height: 32px;
+    gap: 6px;
+    width: 36px;
+    height: 36px;
     background: transparent;
-    border: none;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
     cursor: pointer;
-    padding: 4px;
+    padding: 8px;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      border-color: var(--accent-primary);
+    }
 
     @media (min-width: 768px) {
       display: none;
@@ -104,7 +120,7 @@
 
   &__mobile-toggle-bar {
     display: block;
-    width: 20px;
+    width: 18px;
     height: 2px;
     background: var(--text-primary);
     border-radius: 2px;
@@ -113,7 +129,7 @@
 
   &__mobile-toggle.active &__mobile-toggle-bar {
     &:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: rotate(45deg) translate(6px, 6px);
     }
 
     &:nth-child(2) {
@@ -121,7 +137,7 @@
     }
 
     &:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+      transform: rotate(-45deg) translate(6px, -6px);
     }
   }
 
@@ -130,16 +146,32 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 60px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--bg-primary);
-    padding: var(--space-xl) var(--space-md);
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background: #0c0c0c; // Use solid hex to ensure it renders
+    padding: var(--space-3xl) var(--space-lg);
     gap: var(--space-lg);
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    animation: slideIn var(--transition-medium) ease-out;
+    animation: slideFromRight var(--transition-medium) ease-out;
+
+    .nav__link {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+      position: relative;
+      z-index: 1000;
+
+      &:hover {
+        color: var(--accent-primary);
+      }
+    }
 
     @media (min-width: 768px) {
       display: flex;
@@ -148,17 +180,24 @@
       background: transparent;
       padding: 0;
       animation: none;
+      z-index: auto;
+
+      .nav__link {
+        font-family: var(--font-body);
+        font-size: 0.8125rem;
+        z-index: auto;
+      }
     }
   }
 }
 
-@keyframes slideIn {
+@keyframes slideFromRight {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateX(100%);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }

@@ -1,38 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 :root {
-  // Soft dark palette - muted, sophisticated
-  --bg-primary: #0f0f12;
-  --bg-secondary: #16161b;
-  --bg-tertiary: #1c1c23;
-  --bg-card: #1a1a21;
-  --bg-card-hover: #222229;
+  // High contrast blacks
+  --bg-primary: #0c0c0c;
+  --bg-secondary: #161616;
+  --bg-tertiary: #1f1f1f;
+  --bg-card: #141414;
+  --bg-card-hover: #1a1a1a;
 
-  // Refined accent - warm rose gold
-  --accent-primary: #c9a87c;
-  --accent-secondary: #e8d5b7;
-  --accent-muted: rgba(201, 168, 124, 0.15);
-  --accent-glow: rgba(201, 168, 124, 0.08);
+  // Bold accent - vivid orange-red
+  --accent-primary: #ff4d00;
+  --accent-secondary: #ffaa00;
+  --accent-muted: rgba(255, 77, 0, 0.12);
+  --accent-glow: rgba(255, 77, 0, 0.25);
 
-  // Text hierarchy
-  --text-primary: #f5f5f7;
-  --text-secondary: #a1a1aa;
-  --text-tertiary: #6b6b76;
-  --text-muted: #52525b;
+  // Near-pure white for maximum contrast
+  --text-primary: #fafafa;
+  --text-secondary: #999999;
+  --text-tertiary: #666666;
+  --text-muted: #444444;
 
-  // Subtle borders
+  // Borders
   --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-medium: rgba(255, 255, 255, 0.1);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --border-accent: var(--accent-primary);
 
   // Shadows
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
   --shadow-glow: 0 0 60px var(--accent-glow);
 
   // Typography
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 
   // Spacing
   --space-xs: 0.5rem;
@@ -41,16 +43,18 @@
   --space-lg: 2.5rem;
   --space-xl: 4rem;
   --space-2xl: 6rem;
+  --space-3xl: 10rem;
 
   // Transitions
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-medium: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-dramatic: 800ms cubic-bezier(0.16, 1, 0.3, 1);
 
   // Border radius
   --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-lg: 16px;
+  --radius-lg: 12px;
   --radius-xl: 24px;
 }
 
@@ -78,8 +82,8 @@ body {
 
 // Selection
 ::selection {
-  background: var(--accent-muted);
-  color: var(--accent-secondary);
+  background: var(--accent-primary);
+  color: var(--bg-primary);
 }
 
 // Scrollbar
@@ -93,38 +97,42 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-tertiary);
+  background: var(--text-muted);
   border-radius: var(--radius-sm);
 
   &:hover {
-    background: var(--text-muted);
+    background: var(--accent-primary);
   }
 }
 
-// Typography utilities
+// Typography - Editorial scale
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
   font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 15vw, 12rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 p {
   color: var(--text-secondary);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 a {
@@ -146,17 +154,30 @@ a {
 // Utility classes
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--space-md);
 
   @media (min-width: 768px) {
     padding: 0 var(--space-lg);
   }
+
+  @media (min-width: 1200px) {
+    padding: 0 var(--space-xl);
+  }
 }
 
 .section {
   padding: var(--space-2xl) 0;
+  position: relative;
+}
+
+// Highlight text - editorial style
+.highlight {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 0.1em 0.3em;
+  font-weight: 500;
 }
 
 .text-accent {
@@ -167,34 +188,122 @@ a {
   color: var(--text-tertiary);
 }
 
-// Grain overlay for texture
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+// Section numbers (01, 02, 03)
+.section-number {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 25vw, 20rem);
+  color: var(--bg-tertiary);
+  opacity: 0.4;
   pointer-events: none;
-  opacity: 0.03;
-  z-index: 1000;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  user-select: none;
+  line-height: 0.8;
+  z-index: 0;
 }
 
-// Ambient gradient background
-body::after {
-  content: '';
-  position: fixed;
-  top: -50%;
-  right: -50%;
+// Bold divider line
+.divider {
   width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.4;
-  z-index: -1;
-  background: radial-gradient(
-    ellipse at 70% 20%,
-    var(--accent-glow) 0%,
-    transparent 50%
-  );
+  height: 1px;
+  background: var(--border-medium);
+  margin: var(--space-xl) 0;
+
+  &--accent {
+    background: linear-gradient(90deg, var(--accent-primary), transparent);
+    height: 2px;
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealText {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// Animation utilities
+.animate-fade-up {
+  animation: fadeInUp var(--transition-dramatic) ease-out both;
+}
+
+.animate-slide-left {
+  animation: slideFromLeft var(--transition-dramatic) ease-out both;
+}
+
+.animate-slide-right {
+  animation: slideFromRight var(--transition-dramatic) ease-out both;
+}
+
+// Stagger delays
+@for $i from 1 through 10 {
+  .delay-#{$i} {
+    animation-delay: #{$i * 0.1}s;
+  }
 }
