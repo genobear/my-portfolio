@@ -1,0 +1,39 @@
+<section class="projects" id="projects">
+  <div class="projects__container">
+    <header class="projects__header">
+      <div class="projects__title-group">
+        <span class="projects__label">Portfolio</span>
+        <h2 class="projects__title">Selected Work</h2>
+        <p class="projects__subtitle">
+          A collection of projects showcasing my expertise across different technologies and domains.
+        </p>
+      </div>
+
+      <div class="projects__filters">
+        @for (option of filterOptions(); track option.value) {
+          <button
+            class="projects__filter"
+            [class.active]="activeFilter() === option.value"
+            (click)="setFilter(option.value)"
+          >
+            {{ option.label }}
+          </button>
+        }
+      </div>
+    </header>
+
+    <div class="projects__grid">
+      @for (project of projects(); track project.id; let i = $index) {
+        <app-project-card [project]="project" [index]="i" />
+      } @empty {
+        <div class="projects__empty">
+          <p>No projects found for this filter.</p>
+        </div>
+      }
+    </div>
+
+    <div class="projects__count">
+      <span>Showing {{ projects().length }} of {{ totalProjects() }} projects</span>
+    </div>
+  </div>
+</section>

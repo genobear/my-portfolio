@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    // Python
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "charliermarsh.ruff",
+
+    // Angular/TypeScript
+    "angular.ng-template",
+    "esbenp.prettier-vscode",
+
+    // Docker
+    "ms-azuretools.vscode-docker",
+
+    // General
+    "editorconfig.editorconfig"
+  ]
+}

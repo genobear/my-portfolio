@@ -1,0 +1,49 @@
+{
+  // Python (Backend)
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
+  "python.analysis.extraPaths": ["${workspaceFolder}/backend/src"],
+  "python.envFile": "${workspaceFolder}/backend/.env",
+
+  // Pylint / Linting
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+
+  // Format on save
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // File associations
+  "files.associations": {
+    "*.html": "html"
+  },
+
+  // Exclude from search/explorer
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/node_modules": true,
+    "**/.angular": true,
+    "**/*.pyc": true
+  },
+
+  // Terminal
+  "terminal.integrated.cwd": "${workspaceFolder}"
+}
