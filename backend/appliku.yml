@@ -3,11 +3,11 @@ build_settings:
   dockerfile_path: Dockerfile
   container_port: 8000
 
-environment_variables:
-  - from_database:
-      name: db
-      property: private_connection_url
-    name: DATABASE_URL
+  environment_variables:
+    - from_database:
+        name: db
+        property: private_connection_url
+      name: DATABASE_URL
 
 services:
   web:
