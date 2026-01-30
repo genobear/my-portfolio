@@ -6,7 +6,7 @@ build_settings:
 environment_variables:
   - from_database:
       name: db
-      property: connection_url
+      property: private_connection_url
     name: DATABASE_URL
 
 services:
