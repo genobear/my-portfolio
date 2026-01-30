@@ -1,0 +1,9 @@
+build_settings:
+  build_image: dockerfile
+  dockerfile_path: Dockerfile
+  container_port: 80
+
+services:
+  web:
+    command: /docker-entrypoint.sh nginx -g 'daemon off;'
+    scale: 1

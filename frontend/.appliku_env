@@ -1,0 +1,5 @@
+# Frontend environment variables for Appliku
+# Import this file via Appliku dashboard: Settings -> Environment Variables -> Import
+#
+# Update this URL to point to your deployed backend app
+API_URL=https://my-portfolio-api.example.com

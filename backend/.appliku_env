@@ -1,0 +1,6 @@
+# Backend environment variables for Appliku
+# Import this file via Appliku dashboard: Settings -> Environment Variables -> Import
+#
+# DATABASE_URL is auto-injected by Appliku from managed database
+CORS_ORIGINS=https://my-portfolio-web.example.com
+DEBUG=false
