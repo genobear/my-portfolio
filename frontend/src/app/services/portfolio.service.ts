@@ -33,56 +33,36 @@ export class PortfolioService {
     },
     {
       id: '2',
-      title: 'API Forge',
-      description: 'A robust REST API starter kit with authentication, rate limiting, and comprehensive documentation built-in.',
-      technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Docker', 'OpenAPI'],
-      category: 'api',
-      repoUrl: 'https://github.com/yourusername/api-forge',
-      imageUrl: '/assets/screenshots/image.png',
-      featured: true,
-      year: 2024
-    },
+      title: 'Portfolio Website',
+      description: 'A sleek and modern portfolio website to showcase my projects, skills, and experience as a full-stack developer.',
+      technologies: ['Angular', 'TypeScript', 'CSS'],
+      category: 'web',
+      repoUrl: 'https://github.com/genobear/my-portfolio',
+      liveUrl: 'https://myportfolio.com',
+      featured: false,
+      year: 2026
+    }
     {
       id: '3',
-      title: 'Minimal Portfolio',
-      description: 'An elegant, performance-focused portfolio template with dark mode and smooth animations.',
-      technologies: ['Angular', 'SCSS', 'TypeScript'],
-      category: 'web',
-      repoUrl: 'https://github.com/yourusername/minimal-portfolio',
-      liveUrl: 'https://portfolio.example.com',
-      featured: false,
-      year: 2024
-    },
+      title: 'Arrive Enforce UK',
+      description: 'Robust itegration platform for Arrive UK Parking division. Integrating their systems with multiple third-party services to streamline operations and enhance user experience.',
+      technologies: ['Django', 'Python', 'Celery', 'PostgreSQL', 'Docker', 'AWS', 'CSS'],
+      category: 'fullstack',
+      repoUrl: '',
+      liveUrl: 'https://enforce.fbsc.uk/',
+      featured: true,
+      year: 2025
+    }
     {
       id: '4',
-      title: 'TaskFlow',
-      description: 'A collaborative task management application with real-time updates, Kanban boards, and team analytics.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Chart.js'],
-      category: 'fullstack',
-      repoUrl: 'https://github.com/yourusername/taskflow',
-      liveUrl: 'https://taskflow.example.com',
+      title: 'Geno\'s Block Party',
+      description: 'A breakout-style game built with Phaser framework, with a music focused theme & engaging power-ups.',
+      technologies: ['TypeScript', 'Phaser', 'HTML5', 'CSS'],
+      category: 'web',
+      repoUrl: 'https://github.com/genobear/Genos-Block-Party',
+      liveUrl: 'https://genobear.github.io/Genos-Block-Party/',
       featured: true,
-      year: 2023
-    },
-    {
-      id: '5',
-      title: 'DevCLI',
-      description: 'A powerful command-line tool for automating development workflows, scaffolding, and code generation.',
-      technologies: ['Rust', 'CLI', 'TOML'],
-      category: 'other',
-      repoUrl: 'https://github.com/yourusername/devcli',
-      featured: false,
-      year: 2023
-    },
-    {
-      id: '6',
-      title: 'WeatherNow',
-      description: 'A beautiful weather application with location-based forecasts, radar maps, and severe weather alerts.',
-      technologies: ['Flutter', 'Dart', 'OpenWeather API'],
-      category: 'mobile',
-      repoUrl: 'https://github.com/yourusername/weathernow',
-      featured: false,
-      year: 2023
+      year: 2026
     }
   ]);
 
