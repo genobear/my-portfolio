@@ -28,7 +28,7 @@ export class PortfolioService {
       category: 'web',
       repoUrl: 'https://github.com/genobear/Andrew-memoirs',
       liveUrl: 'https://genobear.github.io/Andrew-memoirs/',
-      featured: true,
+      featured: false,
       year: 2026
     },
     {
@@ -38,10 +38,10 @@ export class PortfolioService {
       technologies: ['Angular', 'TypeScript', 'CSS'],
       category: 'web',
       repoUrl: 'https://github.com/genobear/my-portfolio',
-      liveUrl: 'https://myportfolio.com',
+      liveUrl: 'https://geno.gg/',
       featured: false,
       year: 2026
-    }
+    },
     {
       id: '3',
       title: 'Arrive Enforce UK',
@@ -52,7 +52,7 @@ export class PortfolioService {
       liveUrl: 'https://enforce.fbsc.uk/',
       featured: true,
       year: 2025
-    }
+    },
     {
       id: '4',
       title: 'Geno\'s Block Party',
