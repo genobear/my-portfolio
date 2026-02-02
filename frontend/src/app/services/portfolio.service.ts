@@ -78,7 +78,7 @@ export class PortfolioService {
       id: '6',
       title: 'Method.gg Dune: Awakening Database',
       description: 'Built and maintain a datamining pipeline that keeps Method.gg\'s Dune: Awakening database synchronized with the latest game updates. Browse items, schematics, and game data with search and filtering.',
-      technologies: ['Python'],
+      technologies: ['Python', 'FModel'],
       category: 'other',
       liveUrl: 'https://www.method.gg/dune-awakening/database',
       featured: false,
