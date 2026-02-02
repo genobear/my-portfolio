@@ -49,8 +49,10 @@ export class PortfolioService {
       technologies: ['Django', 'Python', 'Celery', 'PostgreSQL', 'Docker', 'AWS', 'CSS'],
       category: 'fullstack',
       liveUrl: 'https://enforce.fbsc.uk/',
+      imageUrl: 'assets/screenshots/arrive.png',
       featured: true,
-      year: 2025
+      year: 2025,
+
     },
     {
       id: '4',
