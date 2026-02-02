@@ -5,7 +5,7 @@ export interface Project {
   longDescription?: string;
   technologies: string[];
   category: 'web' | 'api' | 'fullstack' | 'mobile' | 'other';
-  repoUrl: string;
+  repoUrl?: string;
   liveUrl?: string;
   imageUrl?: string;
   featured: boolean;

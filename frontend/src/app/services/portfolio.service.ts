@@ -33,8 +33,8 @@ export class PortfolioService {
     },
     {
       id: '2',
-      title: 'Portfolio Website',
-      description: 'A sleek and modern portfolio website to showcase my projects, skills, and experience as a full-stack developer.',
+      title: 'This Portfolio Website',
+      description: 'I wanted to try our Angular framework, so built this very portfolio website you are viewing right now. Built with Angular and showcasing my projects and skills as a full-stack developer.',
       technologies: ['Angular', 'TypeScript', 'CSS'],
       category: 'web',
       repoUrl: 'https://github.com/genobear/my-portfolio',
@@ -48,7 +48,6 @@ export class PortfolioService {
       description: 'Robust itegration platform for Arrive UK Parking division. Integrating their systems with multiple third-party services to streamline operations and enhance user experience.',
       technologies: ['Django', 'Python', 'Celery', 'PostgreSQL', 'Docker', 'AWS', 'CSS'],
       category: 'fullstack',
-      repoUrl: '',
       liveUrl: 'https://enforce.fbsc.uk/',
       featured: true,
       year: 2025
@@ -63,6 +62,56 @@ export class PortfolioService {
       liveUrl: 'https://genobear.github.io/Genos-Block-Party/',
       featured: true,
       year: 2026
+    },
+    {
+      id: '5',
+      title: 'Dune: Awakening Crafting Calculator',
+      description: 'Backend-first base planning tool for Dune: Awakening. Calculates power requirements, water production, and storage capacities. Features full crafting chain breakdowns with configurable station efficiency levels. Built with Django and HTMX for server-driven interactivity.',
+      technologies: ['Javascript', 'CSS', 'Python', 'Django', 'HTMX'],
+      category: 'fullstack',
+      liveUrl: 'https://dune.geno.gg/',
+      featured: true,
+      year: 2025
+    },
+    {
+      id: '6',
+      title: 'Method.gg Dune: Awakening Database',
+      description: 'Built and maintain a datamining pipeline that keeps Method.gg\'s Dune: Awakening database synchronized with the latest game updates. Browse items, schematics, and game data with search and filtering.',
+      technologies: ['Python'],
+      category: 'other',
+      liveUrl: 'https://www.method.gg/dune-awakening/database',
+      featured: false,
+      year: 2025
+    },
+    {
+      id: '7',
+      title: 'Method.gg Dune: Awakening Specialisation Calculator',
+      description: 'Plan your character build with an interactive specialisation tree viewer. Calculate XP and spice costs for your goals, compare current vs target level stats, and view a summary of all affected attributes.',
+      technologies: ['Javascript', 'CSS'],
+      category: 'web',
+      liveUrl: 'https://www.method.gg/dune-awakening/specialization-calculator',
+      featured: false,
+      year: 2025
+    },
+    {
+      id: '8',
+      title: 'Method.gg Dune: Awakening Testing Station Browser',
+      description: 'Explore difficulty-scaled dungeons with an interactive level slider. View how enemy stats, player modifiers, item drop rates, and XP rewards change based on dungeon difficulty.',
+      technologies: ['Javascript', 'CSS'],
+      category: 'web',
+      liveUrl: 'https://www.method.gg/dune-awakening/testing-stations',
+      featured: false,
+      year: 2025
+    },
+    {
+      id: '9',
+      title: 'Method.gg Dune: Awakening Augmentation Calculator',
+      description: 'Theorycraft weapon builds by selecting augments and previewing their combined effect on weapon stats. Compare different augment combinations to optimize your loadout.',
+      technologies: ['Javascript', 'CSS'],
+      category: 'web',
+      liveUrl: 'https://www.method.gg/dune-awakening/augmentations-database',
+      featured: false,
+      year: 2025
     }
   ]);
 
