@@ -1,4 +1,4 @@
-import { Component, input, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, computed, ChangeDetectionStrategy } from '@angular/core';
 import { Project } from '../../models/project.model';
 
 @Component({
@@ -10,6 +10,15 @@ import { Project } from '../../models/project.model';
 export class ProjectCardComponent {
   project = input.required<Project>();
   index = input(0);
+  openModal = output<Project>();
+
+  onCardClick(): void {
+    this.openModal.emit(this.project());
+  }
+
+  onLinkClick(event: Event): void {
+    event.stopPropagation();
+  }
 
   /**
    * Returns the image URL for the project.

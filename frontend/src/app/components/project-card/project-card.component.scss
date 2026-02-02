@@ -5,6 +5,7 @@
   overflow: hidden;
   transition: all var(--transition-medium);
   animation: fadeInUp 0.6s ease-out both;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-12px);
