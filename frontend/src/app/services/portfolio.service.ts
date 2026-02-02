@@ -14,8 +14,7 @@ export class PortfolioService {
     availableForWork: true,
     socialLinks: [
       { name: 'GitHub', url: 'https://github.com/genobear', icon: 'github' },
-      { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: 'linkedin' },
-      { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: 'twitter' }
+      { name: 'LinkedIn', url: 'https://www.linkedin.com/in/scott-moore-a9a443200/', icon: 'linkedin' }
     ]
   });
 
