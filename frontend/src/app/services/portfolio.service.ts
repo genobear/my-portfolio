@@ -45,7 +45,7 @@ export class PortfolioService {
       id: '3',
       title: 'Arrive Enforce UK',
       description: 'Robust itegration platform for Arrive UK Parking division. Integrating their systems with multiple third-party services to streamline operations and enhance user experience.',
-      technologies: ['Django', 'Python', 'Celery', 'PostgreSQL', 'Docker', 'AWS', 'CSS'],
+      technologies: ['Django', 'REST API', 'Celery', 'PostgreSQL', 'Docker', 'AWS', 'CSS'],
       category: 'fullstack',
       liveUrl: 'https://enforce.fbsc.uk/',
       imageUrl: 'assets/screenshots/arrive.png',
