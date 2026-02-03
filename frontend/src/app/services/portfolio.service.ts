@@ -8,7 +8,7 @@ export class PortfolioService {
   private readonly _profile = signal<ProfileInfo>({
     name: 'Scott Moore',
     role: 'Full-stack Developer',
-    bio: `I craft elegant, scalable web applications with a focus on clean architecture and exceptional user experiences. With expertise spanning frontend frameworks, backend systems, and cloud infrastructure, I bring ideas to life through thoughtful engineering.`,
+    bio: `Full-stack developer who builds things that work and actually make sense. I've shipped everything from parking enforcement platforms to game database tools — and when I'm not writing code for work, I'm probably building tools for games I play. I like clean architecture, but I like shipping even more.`,
     email: 'scott@geno.gg',
     location: 'United Kingdom',
     availableForWork: true,
@@ -33,7 +33,7 @@ export class PortfolioService {
     {
       id: '2',
       title: 'This Portfolio Website',
-      description: 'I wanted to try our Angular framework, so built this very portfolio website you are viewing right now. Built with Angular and showcasing my projects and skills as a full-stack developer.',
+      description: 'I wanted to try out the Angular framework, so I built this very portfolio website you are viewing right now. Showcasing my projects and skills as a full-stack developer.',
       technologies: ['Angular', 'TypeScript', 'CSS'],
       category: 'web',
       repoUrl: 'https://github.com/genobear/my-portfolio',
@@ -44,7 +44,7 @@ export class PortfolioService {
     {
       id: '3',
       title: 'Arrive Enforce UK',
-      description: 'Robust itegration platform for Arrive UK Parking division. Integrating their systems with multiple third-party services to streamline operations and enhance user experience.',
+      description: 'Robust integration platform for Arrive UK Parking division. Integrating their systems with multiple third-party services to streamline operations and enhance user experience.',
       technologies: ['Django', 'REST API', 'Celery', 'PostgreSQL', 'Docker', 'AWS', 'CSS'],
       category: 'fullstack',
       liveUrl: 'https://enforce.fbsc.uk/',
