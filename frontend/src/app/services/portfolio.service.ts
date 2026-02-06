@@ -113,6 +113,16 @@ export class PortfolioService {
       liveUrl: 'https://www.method.gg/dune-awakening/augmentations-database',
       featured: false,
       year: 2025
+    },
+    {
+      id: '10',
+      title: 'AI UI Benchmark',
+      description: 'Compare how different AI models generate frontend UIs from the same prompt. Run benchmarks against multiple models, get 5 unique designs each, and browse them side-by-side with live previews. All client-side — API keys stay in your browser.',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'OpenRouter API', 'IndexedDB'],
+      category: 'tools',
+      repoUrl: 'https://github.com/Geno-Claw/ai-ui-benchmark',
+      featured: true,
+      year: 2026
     }
   ]);
 

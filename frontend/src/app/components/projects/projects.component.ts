@@ -50,6 +50,7 @@ export class ProjectsComponent {
       'api': 'API',
       'fullstack': 'Full-stack',
       'mobile': 'Mobile',
+      'tools': 'Tools',
       'other': 'Other'
     };
     return labels[category] || category;

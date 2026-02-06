@@ -8,6 +8,7 @@ build_settings:
         name: db
         property: private_connection_url
       name: DATABASE_URL
+    - name: GITHUB_PAT
 
 services:
   web:

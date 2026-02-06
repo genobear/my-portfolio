@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NavComponent } from './components/nav/nav.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { GenoClawComponent } from './components/geno-claw/geno-claw.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 @Component({
@@ -13,6 +14,7 @@ import { ContactComponent } from './components/contact/contact.component';
     NavComponent,
     HeroComponent,
     ProjectsComponent,
+    GenoClawComponent,
     ContactComponent
   ]
 })

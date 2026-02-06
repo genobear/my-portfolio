@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   longDescription?: string;
   technologies: string[];
-  category: 'web' | 'api' | 'fullstack' | 'mobile' | 'other';
+  category: 'web' | 'api' | 'fullstack' | 'mobile' | 'tools' | 'other';
   repoUrl?: string;
   liveUrl?: string;
   imageUrl?: string;
