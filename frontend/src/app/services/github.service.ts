@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ConfigService } from './config.service';
 
 export interface ContributionDay {
   date: string;
@@ -27,8 +28,9 @@ export interface GitHubContributions {
 })
 export class GitHubService {
   private readonly http = inject(HttpClient);
+  private readonly config = inject(ConfigService);
 
   getContributions(): Observable<GitHubContributions> {
-    return this.http.get<GitHubContributions>('/api/github/contributions');
+    return this.http.get<GitHubContributions>(`${this.config.apiUrl}github/contributions`);
   }
 }
