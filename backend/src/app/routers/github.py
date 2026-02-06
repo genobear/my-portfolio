@@ -2,9 +2,13 @@ import time
 from datetime import datetime, timezone
 
 import httpx
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
+from slowapi import Limiter
+from slowapi.util import get_remote_address
 
 from src.app.config import get_settings
+
+limiter = Limiter(key_func=get_remote_address)
 
 router = APIRouter(prefix="/github", tags=["github"])
 
@@ -69,7 +73,8 @@ def _calculate_account_age(created_at: str) -> str:
 
 
 @router.get("/contributions")
-async def get_contributions():
+@limiter.limit("30/minute")
+async def get_contributions(request: Request):
     """Fetch GitHub contribution data for Geno-Claw."""
     now = time.time()
 
