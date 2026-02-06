@@ -14,6 +14,7 @@ export class NavComponent {
   readonly navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Geno-Claw', href: '#geno-claw' },
     { label: 'Contact', href: '#contact' }
   ];
 

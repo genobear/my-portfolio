@@ -1,0 +1,102 @@
+<section class="geno-claw" id="geno-claw">
+  <span class="geno-claw__section-number">03</span>
+  <div class="geno-claw__divider"></div>
+
+  <div class="geno-claw__container">
+    <header class="geno-claw__header">
+      <span class="geno-claw__label">AI Agent</span>
+      <h2 class="geno-claw__title">Meet <span class="highlight">Geno-Claw</span> 🦖</h2>
+      <p class="geno-claw__subtitle">
+        Geno-Claw is my AI development agent — an autonomous GitHub contributor that writes code,
+        opens pull requests, and ships features while I'm away. It's like having a tireless
+        pair-programmer that works around the clock.
+      </p>
+    </header>
+
+    @if (loading()) {
+      <div class="geno-claw__loading">
+        <div class="geno-claw__loading-pulse"></div>
+        <span>Fetching contribution data...</span>
+      </div>
+    } @else if (error()) {
+      <div class="geno-claw__error">
+        <p>Could not load contribution data. Check back later.</p>
+      </div>
+    } @else if (contributions(); as data) {
+      <div class="geno-claw__stats">
+        <div class="geno-claw__stat">
+          <span class="geno-claw__stat-value">{{ data.totalContributions }}</span>
+          <span class="geno-claw__stat-label">Contributions</span>
+        </div>
+        <div class="geno-claw__stat">
+          <span class="geno-claw__stat-value">{{ data.commits }}</span>
+          <span class="geno-claw__stat-label">Commits</span>
+        </div>
+        <div class="geno-claw__stat">
+          <span class="geno-claw__stat-value">{{ data.pullRequests }}</span>
+          <span class="geno-claw__stat-label">PRs Merged</span>
+        </div>
+        <div class="geno-claw__stat">
+          <span class="geno-claw__stat-value">{{ data.issues }}</span>
+          <span class="geno-claw__stat-label">Issues Closed</span>
+        </div>
+        <div class="geno-claw__stat">
+          <span class="geno-claw__stat-value">{{ data.accountAge }}</span>
+          <span class="geno-claw__stat-label">Account Age</span>
+        </div>
+      </div>
+
+      <div class="geno-claw__heatmap-wrapper">
+        <h3 class="geno-claw__heatmap-title">Contribution Activity <span class="geno-claw__heatmap-period">(Last 30 days)</span></h3>
+
+        <div class="geno-claw__heatmap">
+          <div class="geno-claw__heatmap-labels">
+            @for (label of dayLabels; track label; let i = $index) {
+              <span class="geno-claw__heatmap-day-label" [class.visible]="i % 2 === 1">{{ label }}</span>
+            }
+          </div>
+          <div class="geno-claw__heatmap-grid">
+            @for (week of data.weeks; track $index) {
+              <div class="geno-claw__heatmap-column">
+                @for (day of week.days; track day.date) {
+                  <div
+                    class="geno-claw__heatmap-cell"
+                    [style.background-color]="levelColors[day.level]"
+                    [title]="day.count + ' contributions on ' + day.date"
+                  ></div>
+                }
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="geno-claw__heatmap-legend">
+          <span class="geno-claw__heatmap-legend-label">Less</span>
+          @for (color of levelColors; track color) {
+            <div class="geno-claw__heatmap-legend-cell" [style.background-color]="color"></div>
+          }
+          <span class="geno-claw__heatmap-legend-label">More</span>
+        </div>
+      </div>
+
+      <div class="geno-claw__callout">
+        <span class="geno-claw__callout-icon">🌙</span>
+        <p class="geno-claw__callout-text">
+          While Scott slept, Geno-Claw shipped 10 game features overnight
+        </p>
+      </div>
+    }
+
+    <a
+      class="geno-claw__profile-link"
+      href="https://github.com/Geno-Claw"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View Geno-Claw on GitHub
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+      </svg>
+    </a>
+  </div>
+</section>
