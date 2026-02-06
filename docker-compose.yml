@@ -23,6 +23,7 @@ services:
       DATABASE_URL: mysql+pymysql://${MYSQL_USER:-portfolio}:${MYSQL_PASSWORD:-portfolio}@db:3306/${MYSQL_DATABASE:-portfolio}
       DEBUG: "false"
       CORS_ORIGINS: "http://localhost:80,http://localhost,http://127.0.0.1"
+      GITHUB_PAT: ${GITHUB_PAT:-}
     depends_on:
       db:
         condition: service_healthy

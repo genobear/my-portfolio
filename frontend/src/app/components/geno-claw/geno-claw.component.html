@@ -22,69 +22,71 @@
       <div class="geno-claw__error">
         <p>Could not load contribution data. Check back later.</p>
       </div>
-    } @else if (contributions(); as data) {
-      <div class="geno-claw__stats">
-        <div class="geno-claw__stat">
-          <span class="geno-claw__stat-value">{{ data.totalContributions }}</span>
-          <span class="geno-claw__stat-label">Contributions</span>
-        </div>
-        <div class="geno-claw__stat">
-          <span class="geno-claw__stat-value">{{ data.commits }}</span>
-          <span class="geno-claw__stat-label">Commits</span>
-        </div>
-        <div class="geno-claw__stat">
-          <span class="geno-claw__stat-value">{{ data.pullRequests }}</span>
-          <span class="geno-claw__stat-label">PRs Merged</span>
-        </div>
-        <div class="geno-claw__stat">
-          <span class="geno-claw__stat-value">{{ data.issues }}</span>
-          <span class="geno-claw__stat-label">Issues Closed</span>
-        </div>
-        <div class="geno-claw__stat">
-          <span class="geno-claw__stat-value">{{ data.accountAge }}</span>
-          <span class="geno-claw__stat-label">Account Age</span>
-        </div>
-      </div>
-
-      <div class="geno-claw__heatmap-wrapper">
-        <h3 class="geno-claw__heatmap-title">Contribution Activity <span class="geno-claw__heatmap-period">(Last 30 days)</span></h3>
-
-        <div class="geno-claw__heatmap">
-          <div class="geno-claw__heatmap-labels">
-            @for (label of dayLabels; track label; let i = $index) {
-              <span class="geno-claw__heatmap-day-label" [class.visible]="i % 2 === 1">{{ label }}</span>
-            }
+    } @else {
+      @if (contributions(); as data) {
+        <div class="geno-claw__stats">
+          <div class="geno-claw__stat">
+            <span class="geno-claw__stat-value">{{ data.totalContributions }}</span>
+            <span class="geno-claw__stat-label">Contributions</span>
           </div>
-          <div class="geno-claw__heatmap-grid">
-            @for (week of data.weeks; track $index) {
-              <div class="geno-claw__heatmap-column">
-                @for (day of week.days; track day.date) {
-                  <div
-                    class="geno-claw__heatmap-cell"
-                    [style.background-color]="levelColors[day.level]"
-                    [title]="day.count + ' contributions on ' + day.date"
-                  ></div>
-                }
-              </div>
-            }
+          <div class="geno-claw__stat">
+            <span class="geno-claw__stat-value">{{ data.commits }}</span>
+            <span class="geno-claw__stat-label">Commits</span>
+          </div>
+          <div class="geno-claw__stat">
+            <span class="geno-claw__stat-value">{{ data.pullRequests }}</span>
+            <span class="geno-claw__stat-label">PRs Merged</span>
+          </div>
+          <div class="geno-claw__stat">
+            <span class="geno-claw__stat-value">{{ data.issues }}</span>
+            <span class="geno-claw__stat-label">Issues Closed</span>
+          </div>
+          <div class="geno-claw__stat">
+            <span class="geno-claw__stat-value">{{ data.accountAge }}</span>
+            <span class="geno-claw__stat-label">Account Age</span>
           </div>
         </div>
 
-        <div class="geno-claw__heatmap-legend">
-          <span class="geno-claw__heatmap-legend-label">Less</span>
-          @for (color of levelColors; track color) {
-            <div class="geno-claw__heatmap-legend-cell" [style.background-color]="color"></div>
-          }
-          <span class="geno-claw__heatmap-legend-label">More</span>
-        </div>
-      </div>
+        <div class="geno-claw__heatmap-wrapper">
+          <h3 class="geno-claw__heatmap-title">Contribution Activity <span class="geno-claw__heatmap-period">(Last 30 days)</span></h3>
 
-      <div class="geno-claw__callout">
-        <span class="geno-claw__callout-icon">🌙</span>
-        <p class="geno-claw__callout-text">
-          While Scott slept, Geno-Claw shipped 10 game features overnight
-        </p>
-      </div>
+          <div class="geno-claw__heatmap">
+            <div class="geno-claw__heatmap-header">
+              @for (label of dayLabels; track label) {
+                <span>{{ label }}</span>
+              }
+            </div>
+            <div class="geno-claw__heatmap-grid">
+              @for (week of data.weeks; track $index) {
+                <div class="geno-claw__heatmap-row">
+                  @for (day of week.days; track day.date) {
+                    <div
+                      class="geno-claw__heatmap-cell"
+                      [style.background-color]="levelColors[day.level]"
+                      [title]="day.count + ' contributions on ' + day.date"
+                    ></div>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+
+          <div class="geno-claw__heatmap-legend">
+            <span class="geno-claw__heatmap-legend-label">Less</span>
+            @for (color of levelColors; track color) {
+              <div class="geno-claw__heatmap-legend-cell" [style.background-color]="color"></div>
+            }
+            <span class="geno-claw__heatmap-legend-label">More</span>
+          </div>
+        </div>
+
+        <div class="geno-claw__callout">
+          <span class="geno-claw__callout-icon">🌙</span>
+          <p class="geno-claw__callout-text">
+            While Scott slept, Geno-Claw shipped 10 game features overnight
+          </p>
+        </div>
+      }
     }
 
     <a

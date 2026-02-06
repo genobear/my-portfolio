@@ -26,6 +26,8 @@ services:
       - ./backend/src:/app/src
       - ./backend/tests:/app/tests
       - ./backend/alembic:/app/alembic
+    env_file:
+      - ./backend/.env
     environment:
       DATABASE_URL: mysql+pymysql://portfolio:portfolio@db:3306/portfolio
       DEBUG: "true"
