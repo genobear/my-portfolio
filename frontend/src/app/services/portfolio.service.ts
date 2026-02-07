@@ -121,6 +121,7 @@ export class PortfolioService {
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'OpenRouter API', 'IndexedDB'],
       category: 'tools',
       repoUrl: 'https://github.com/Geno-Claw/ai-ui-benchmark',
+      liveUrl: 'https://geno-claw.github.io/ai-ui-benchmark/',
       featured: true,
       year: 2026
     }
